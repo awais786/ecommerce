@@ -4,10 +4,10 @@ import os
 
 from auth_backends.urls import oauth2_urlpatterns
 from django.conf import settings
-from django.urls import include, path, re_path
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.shortcuts import redirect
+from django.urls import include, path, re_path
 from django.utils.translation import gettext_lazy as _
 from django.views.defaults import page_not_found, server_error
 from django.views.generic import TemplateView
