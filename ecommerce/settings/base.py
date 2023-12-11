@@ -8,7 +8,7 @@ from logging.handlers import SysLogHandler
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from ecommerce.core.constants import (
     ENTERPRISE_COUPON_ADMIN_ROLE,
@@ -100,7 +100,6 @@ LOCALE_PATHS = (
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-l10n
-USE_L10N = True
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-tz
 USE_TZ = True
@@ -141,7 +140,12 @@ STATICFILES_FINDERS = (
 
 # ThemeStorage stores and retrieves files with theming in mind.
 # More details on ThemeStorage can be seen at /ecommerce/theming/__init__.py
-STATICFILES_STORAGE = "ecommerce.theming.storage.ThemeStorage"
+STORAGES = {
+    **STORAGES,
+    "staticfiles": {
+        "BACKEND": "ecommerce.theming.storage.ThemeStorage",
+    },
+}
 
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),

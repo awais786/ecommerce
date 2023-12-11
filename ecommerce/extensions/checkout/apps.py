@@ -1,6 +1,6 @@
 
 
-from django.conf.urls import url
+from django.urls import path, re_path
 from oscar.apps.checkout import apps
 from oscar.core.loading import get_class
 
@@ -22,35 +22,35 @@ class CheckoutConfig(apps.CheckoutConfig):
 
     def get_urls(self):
         urls = [
-            url(r'^free-checkout/$', self.free_checkout.as_view(), name='free-checkout'),
-            url(r'^cancel-checkout/$', self.cancel_checkout.as_view(), name='cancel-checkout'),
-            url(r'^error/', self.checkout_error.as_view(), name='error'),
-            url(r'^receipt/', self.receipt_response.as_view(), name='receipt'),
+            path('free-checkout/', self.free_checkout.as_view(), name='free-checkout'),
+            path('cancel-checkout/', self.cancel_checkout.as_view(), name='cancel-checkout'),
+            re_path(r'^error/', self.checkout_error.as_view(), name='error'),
+            re_path(r'^receipt/', self.receipt_response.as_view(), name='receipt'),
 
-            url(r'^$', self.index_view.as_view(), name='index'),
+            path('', self.index_view.as_view(), name='index'),
 
             # Shipping/user address views
-            url(r'shipping-address/$',
+            path('shipping-address/',
                 self.shipping_address_view.as_view(), name='shipping-address'),
-            url(r'user-address/edit/(?P<pk>\d+)/$',
+            path('user-address/edit/<int:pk>/',
                 self.user_address_update_view.as_view(),
                 name='user-address-update'),
-            url(r'user-address/delete/(?P<pk>\d+)/$',
+            path('user-address/delete/<int:pk>/',
                 self.user_address_delete_view.as_view(),
                 name='user-address-delete'),
 
             # Shipping method views
-            url(r'shipping-method/$',
+            path('shipping-method/',
                 self.shipping_method_view.as_view(), name='shipping-method'),
 
             # Payment views
-            url(r'payment-method/$',
+            path('payment-method/',
                 self.payment_method_view.as_view(), name='payment-method'),
-            url(r'payment-details/$',
+            path('payment-details/',
                 self.payment_details_view.as_view(), name='payment-details'),
 
             # Preview
-            url(r'preview/$',
+            path('preview/',
                 self.payment_details_view.as_view(preview=True),
                 name='preview'),
         ]
