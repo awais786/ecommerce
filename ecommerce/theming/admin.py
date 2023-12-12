@@ -21,5 +21,3 @@ class SiteThemeAdmin(admin.ModelAdmin):
         Meta class for SiteTheme admin model
         """
         model = SiteTheme
-
-
