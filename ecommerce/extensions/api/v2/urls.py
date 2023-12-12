@@ -62,7 +62,10 @@ REFUND_URLS = [
 ]
 
 RETIREMENT_URLS = [
-    re_path(r'^tracking_id/{}/$'.format(USERNAME_PATTERN), retirement_views.EcommerceIdView.as_view(), name='tracking_id')
+    re_path(
+        r'^tracking_id/{}/$'.format(USERNAME_PATTERN),
+        retirement_views.EcommerceIdView.as_view(), name='tracking_id'
+    )
 ]
 
 COUPON_URLS = [
