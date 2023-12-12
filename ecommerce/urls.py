@@ -50,8 +50,10 @@ admin.site.site_title = admin.site.site_header
 AUTH_URLS = [path('logout/', LogoutView.as_view(), name='logout'), ] + oauth2_urlpatterns
 
 WELL_KNOWN_URLS = [
-    re_path(r'^.well-known/apple-developer-merchantid-domain-association.txt$',
-        ApplePayMerchantDomainAssociationView.as_view(), name='apple_pay_domain_association'),
+    re_path(
+        r'^.well-known/apple-developer-merchantid-domain-association.txt$',
+        ApplePayMerchantDomainAssociationView.as_view(), name='apple_pay_domain_association'
+    ),
 ]
 
 schema_view = get_schema_view(
