@@ -1,7 +1,7 @@
 """Oscar-specific settings"""
 
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from oscar.defaults import *
 
 from ecommerce.extensions.fulfillment.status import LINE, ORDER
@@ -45,10 +45,10 @@ OSCAR_APPS = [
     'oscar.apps.dashboard.partners',
     'oscar.apps.dashboard.pages',
     'oscar.apps.dashboard.ranges',
-    'oscar.apps.dashboard.reviews',
+    'oscar.apps.dashboard.reviews.apps.ReviewsDashboardConfig',
     'oscar.apps.dashboard.vouchers',
     'oscar.apps.dashboard.communications',
-    'oscar.apps.dashboard.shipping',
+    'oscar.apps.dashboard.shipping.apps.ShippingDashboardConfig',
 
     'ecommerce.extensions.config.EdxShop',
     'ecommerce.extensions.dashboard.apps.DashboardConfig',
