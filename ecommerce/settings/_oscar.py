@@ -57,7 +57,6 @@ OSCAR_APPS = [
     'ecommerce.extensions.dashboard.refunds.apps.RefundsDashboardConfig',
     'ecommerce.extensions.dashboard.orders.apps.OrdersDashboardConfig',
     'ecommerce.extensions.dashboard.users.apps.UsersDashboardConfig',
-    # 'ecommerce.extensions.refund.apps.RefundConfig',
 
     # 3rd-party apps that oscar depends on
     'haystack',
