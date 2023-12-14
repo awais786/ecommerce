@@ -50,6 +50,7 @@ OSCAR_APPS = [
     'oscar.apps.dashboard.communications',
     'oscar.apps.dashboard.shipping',
 
+    'ecommerce.extensions.config.EdxShop',
     'ecommerce.extensions.dashboard.apps.DashboardConfig',
     'ecommerce.extensions.dashboard.catalogue.apps.CatalogueDashboardConfig',
     'ecommerce.extensions.dashboard.offers.apps.OffersDashboardConfig',
