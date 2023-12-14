@@ -1,7 +1,7 @@
 
 
-from django.urls import path
 from django.contrib.auth.decorators import login_required
+from django.urls import path
 from oscar.apps.basket import apps
 from oscar.core.loading import get_class
 
