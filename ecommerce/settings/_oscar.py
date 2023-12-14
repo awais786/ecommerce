@@ -50,12 +50,12 @@ OSCAR_APPS = [
     'oscar.apps.dashboard.communications',
     'oscar.apps.dashboard.shipping',
 
-    'ecommerce.extensions.dashboard',
-    'ecommerce.extensions.dashboard.catalogue',
-    'ecommerce.extensions.dashboard.offers',
-    'ecommerce.extensions.dashboard.refunds',
-    'ecommerce.extensions.dashboard.orders',
-    'ecommerce.extensions.dashboard.users',
+    'ecommerce.extensions.dashboard.apps.DashboardConfig',
+    'ecommerce.extensions.dashboard.catalogue.apps.CatalogueDashboardConfig',
+    'ecommerce.extensions.dashboard.offers.apps.OffersDashboardConfig',
+    'ecommerce.extensions.dashboard.refunds.apps.RefundsDashboardConfig',
+    'ecommerce.extensions.dashboard.orders.apps.OrdersDashboardConfig',
+    'ecommerce.extensions.dashboard.users.apps.UsersDashboardConfig',
 
     # 3rd-party apps that oscar depends on
     'haystack',
