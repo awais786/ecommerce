@@ -15,11 +15,11 @@ OSCAR_HOMEPAGE = reverse_lazy('dashboard:index')
 # APP CONFIGURATION
 OSCAR_APPS = [
     'oscar',
-    'oscar.apps.address',
-    'oscar.apps.shipping',
+    'oscar.apps.address.apps.AddressConfig',
+    'oscar.apps.shipping.apps.ShippingConfig',
     'oscar.apps.catalogue.reviews',
-    'oscar.apps.search',
-    'oscar.apps.wishlists',
+    'oscar.apps.search.apps.SearchConfig',
+    'oscar.apps.wishlists.apps.WishlistsConfig',
 
     'ecommerce.extensions',
     'ecommerce.extensions.iap',
